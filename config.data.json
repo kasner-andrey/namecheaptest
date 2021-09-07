@@ -1,0 +1,18 @@
+{
+  "env": {
+    "dev": {
+      "baseUrl": "https://www.sbzend.ssls.com/",
+      "user": {
+        "email": "ssls.automation+666@gmail.com",
+        "password": "123456"
+      }
+    },
+    "debug": {
+      "baseUrl": "other path",
+      "user": {
+        "email": "other email",
+        "password": "other password"
+      }
+    }
+  }
+}

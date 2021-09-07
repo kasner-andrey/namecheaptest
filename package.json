@@ -1,0 +1,36 @@
+{
+  "name": "test_task_namecheap",
+  "version": "1.0.0",
+  "author": "Kasner Andrey",
+  "description": "Automation test authorisation",
+  "repository": "",
+  "license": "MIT",
+  "scripts": {
+    "win_update": "webdriver-manager update",
+    "win_dev_locally": "protractor protractor.conf.js --suite=all --env=dev --disableCheks",
+
+    "mac_dev_locally": "./node_modules/protractor/bin/protractor protractor.conf.js --suite=all --env=dev --disableChecks",
+    "mac_update-webdriver": "./node_modules/protractor/bin/webdriver-manager update"
+
+  },
+  "dependencies": {
+    "config": "^3.3.2",
+    "exit-on-epipe": "^1.0.1",
+    "protractor": "^7.0.0",
+    "selenium-webdriver": "^4.0.0-rc-1"
+  },
+  "devDependencies": {
+    "bottlejs": "^2.0.0",
+    "faker": "^5.5.3",
+    "jasmine": "^3.6.3",
+    "jasmine-expect": "^5.0.0",
+    "jasmine-node": "^3.0.0",
+    "jasmine-reporters": "^2.5.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "prettier": "^2.3.2",
+    "protractor-beautiful-reporter": "^1.3.6",
+    "protractor-console": "^3.0.0",
+    "protractor-stop-describe-on-failure": "^1.0.4z",
+    "protractor-testability-plugin": "^2.0.2"
+  }
+}
