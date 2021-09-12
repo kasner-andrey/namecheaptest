@@ -20,7 +20,7 @@ class ProfilePage {
 //take value by field name
     async getUserData (field) {
         await commonHelper.waitUntilElementVisible(this.fieldUserData(field), `The "${field}" field is not visible`);
-        return browser.executeScript('return arguments[0].innerText', this.fieldUserData(field));
+        return this.fieldUserData(field).getAttribute('innerText');
     };
 }
 
