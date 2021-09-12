@@ -1,5 +1,6 @@
 'use strict';
 const commonHelper = require('../../helpers/common.helper.js');
+const {element} = require("protractor");
 
 class SignInPage {
 
@@ -39,9 +40,9 @@ class SignInPage {
         await this.clickLogInButton();
     };
 // take password after view (it works if don't click view button)
-    async getPassword () {
+    async getTypePasswordField () {
         await commonHelper.waitUntilElementVisible(this.inputPassword, 'The "Password" field is not visible');
-        return browser.executeScript('return arguments[0].value', this.inputPassword);
+        return this.inputPassword.getAttribute('type');
     };
 
     async clickViewPasswordButton () {

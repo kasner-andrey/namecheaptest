@@ -12,6 +12,8 @@ describe('Authorization user',  () => {
     const url = browser.params.baseUrl;
     const email = browser.params.user.email;
     const password = browser.params.user.password;
+    const passwordTypeInput = 'password';
+    const textTypeInput = 'text';
 
 //first scenarios
     describe('Authorization page. Not registered user', () => {
@@ -45,8 +47,9 @@ describe('Authorization user',  () => {
         //fill fields wrong data and verify wrote password with default after view
         it('Filling in the fields and verify the displayed password', async () => {
             await signInPage.fillLoginField(wrongEmail, wrongPassword);
+            expect(await signInPage.getTypePasswordField()).toEqual(passwordTypeInput);
             await signInPage.clickViewPasswordButton();
-            expect(await signInPage.getPassword()).toEqual(wrongPassword);
+            expect(await signInPage.getTypePasswordField()).toEqual(textTypeInput);
         });
 
         //verify message after login with wrong email and password
@@ -82,8 +85,9 @@ describe('Authorization user',  () => {
         //verify password after view and login with correct email and password
         it('Filling in the fields and verify the displayed password', async () => {
             await signInPage.fillLoginField(email, password);
+            expect(await signInPage.getTypePasswordField()).toEqual(passwordTypeInput);
             await signInPage.clickViewPasswordButton();
-            expect(await signInPage.getPassword()).toEqual(password);
+            expect(await signInPage.getTypePasswordField()).toEqual(textTypeInput);
             await signInPage.clickLogInButton();
         });
 
