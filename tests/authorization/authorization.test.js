@@ -1,4 +1,4 @@
-const pageObject = require('../../page_objects/pages.js').container.PageObject;
+const pageObject = require('../../page_objects/pages.js');
 const commonHelper = require('../../helpers/common.helper.js');
 
 const signInPage = pageObject.getSignInPage();

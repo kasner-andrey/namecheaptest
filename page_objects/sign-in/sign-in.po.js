@@ -1,6 +1,5 @@
 'use strict';
 const commonHelper = require('../../helpers/common.helper.js');
-const {element} = require("protractor");
 
 class SignInPage {
 
@@ -52,7 +51,7 @@ class SignInPage {
 //take message about wrong email or password
     async getInfoMessage () {
       await commonHelper.waitUntilElementVisible(this.infoMessage, 'The "Error message" field is not visible');
-      return browser.executeScript('return arguments[0].innerText', this.infoMessage);
+      return this.infoMessage.getAttribute('innerText');
     };
 }
 
